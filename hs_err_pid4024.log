@@ -1,0 +1,240 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d23511b, pid=4024, tid=828
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_66-b18) (build 1.8.0_66-b18)
+# Java VM: Java HotSpot(TM) Client VM (25.66-b18 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0xd511b]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00879800):  JavaThread "main" [_thread_in_vm, id=828, stack(0x00960000,0x009b0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x00000000, EBX=0x00879800, ECX=0x00000000, EDX=0x00000001
+ESP=0x009ae16c, EBP=0x009ae188, ESI=0x00879940, EDI=0x00000000
+EIP=0x6d23511b, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x009ae16c)
+0x009ae16c:   00000000 13456a50 00879940 00879800
+0x009ae17c:   00000000 00879800 13456a50 009ae1d8
+0x009ae18c:   140ec41a 00879940 00000000 00870079
+0x009ae19c:   13456a50 13456a50 140ec3e9 00000001
+0x009ae1ac:   0000000f 00000049 00000008 00879800
+0x009ae1bc:   13456a50 00000001 0000000f 00879800
+0x009ae1cc:   13456a50 13456a50 00879940 009ae21c
+0x009ae1dc:   009ec0c3 00879940 009ae238 169d050c 
+
+Instructions: (pc=0x6d23511b)
+0x6d2350fb:   f3 ff 83 c4 08 83 7b 04 00 89 5d f0 c7 45 f4 00
+0x6d23510b:   00 00 00 74 08 8d 4d f0 e8 e8 09 0d 00 8b 45 0c
+0x6d23511b:   8b 08 8b 51 04 8b 42 38 50 56 e8 b6 49 08 00 83
+0x6d23512b:   c4 08 83 7d f4 00 89 45 08 74 08 8d 4d f0 e8 02 
+
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x00879800 is a thread
+ECX=0x00000000 is an unknown value
+EDX=0x00000001 is an unknown value
+ESP=0x009ae16c is pointing into the stack for thread: 0x00879800
+EBP=0x009ae188 is pointing into the stack for thread: 0x00879800
+ESI=0x00879940 is an unknown value
+EDI=0x00000000 is an unknown value
+
+
+Stack: [0x00960000,0x009b0000],  sp=0x009ae16c,  free space=312k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0xd511b]
+C  [bwapi_bridge2_4.dll+0x7c41a]
+j  bwapi.Unit.attack_native(JLbwapi/Position;)Z+0
+j  bwapi.Unit.attack(Lbwapi/Position;)Z+6
+j  TestBot1.onFrame()V+320
+j  bwapi.AIModule.onFrame()V+11
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x158ba5]
+V  [jvm.dll+0x21e12e]
+V  [jvm.dll+0x158c3e]
+V  [jvm.dll+0xdb08b]
+V  [jvm.dll+0xde01c]
+C  [bwapi_bridge2_4.dll+0x40e6d]
+C  [bwapi_bridge2_4.dll+0x699d0]
+j  bwapi.Mirror.startGame()V+0
+j  TestBot1.run()V+15
+j  TestBot1.main([Ljava/lang/String;)V+7
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x158ba5]
+V  [jvm.dll+0x21e12e]
+V  [jvm.dll+0x158c3e]
+V  [jvm.dll+0xdae57]
+V  [jvm.dll+0xe33ef]
+C  [javaw.exe+0x229a]
+C  [javaw.exe+0xaebf]
+C  [javaw.exe+0xaf49]
+C  [kernel32.dll+0xb729]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  bwapi.Unit.attack_native(JLbwapi/Position;)Z+0
+j  bwapi.Unit.attack(Lbwapi/Position;)Z+6
+j  TestBot1.onFrame()V+320
+j  bwapi.AIModule.onFrame()V+11
+v  ~StubRoutines::call_stub
+j  bwapi.Mirror.startGame()V+0
+j  TestBot1.run()V+15
+j  TestBot1.main([Ljava/lang/String;)V+7
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x02b26400 JavaThread "Service Thread" daemon [_thread_blocked, id=1508, stack(0x13dd0000,0x13e20000)]
+  0x02af5c00 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=3960, stack(0x13800000,0x13850000)]
+  0x02af4400 JavaThread "Attach Listener" daemon [_thread_blocked, id=3100, stack(0x137b0000,0x13800000)]
+  0x02af3000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3096, stack(0x13760000,0x137b0000)]
+  0x02a81400 JavaThread "Finalizer" daemon [_thread_blocked, id=1580, stack(0x13710000,0x13760000)]
+  0x02a7fc00 JavaThread "Reference Handler" daemon [_thread_blocked, id=2540, stack(0x136c0000,0x13710000)]
+=>0x00879800 JavaThread "main" [_thread_in_vm, id=828, stack(0x00960000,0x009b0000)]
+
+Other Threads:
+  0x02a7d800 VMThread [stack: 0x13670000,0x136c0000] [id=3128]
+  0x13e48400 WatcherThread [stack: 0x14020000,0x14070000] [id=3912]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 1676K [0x02c00000, 0x03150000, 0x08150000)
+  eden space 4416K,  37% used [0x02c00000, 0x02da3030, 0x03050000)
+  from space 512K,   0% used [0x03050000, 0x03050000, 0x030d0000)
+  to   space 512K,   0% used [0x030d0000, 0x030d0000, 0x03150000)
+ tenured generation   total 10944K, used 0K [0x08150000, 0x08c00000, 0x12c00000)
+   the space 10944K,   0% used [0x08150000, 0x08150000, 0x08150200, 0x08c00000)
+ Metaspace       used 401K, capacity 2568K, committed 2624K, reserved 4480K
+
+Card table byte_map: [0x02b60000,0x02bf0000] byte_map_base: 0x02b4a000
+
+Polling page: 0x009b0000
+
+CodeCache: size=32768Kb used=700Kb max_used=700Kb free=32067Kb
+ bounds [0x009e0000, 0x00a90000, 0x029e0000]
+ total_blobs=182 nmethods=35 adapters=78
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 8.141 Thread 0x02af5c00   31             java.lang.String::startsWith (7 bytes)
+Event: 8.141 Thread 0x02af5c00 nmethod 31 0x00a8e808 code [0x00a8e900, 0x00a8e99c]
+Event: 8.479 Thread 0x02af5c00   32             java.lang.Long::valueOf (36 bytes)
+Event: 8.480 Thread 0x02af5c00 nmethod 32 0x00a8ea08 code [0x00a8eb10, 0x00a8ec90]
+Event: 8.480 Thread 0x02af5c00   33             java.lang.Long::<init> (10 bytes)
+Event: 8.480 Thread 0x02af5c00 nmethod 33 0x00a8edc8 code [0x00a8eec0, 0x00a8ef50]
+Event: 8.480 Thread 0x02af5c00   34             java.lang.Long::hashCode (8 bytes)
+Event: 8.480 Thread 0x02af5c00 nmethod 34 0x00a8ef88 code [0x00a8f080, 0x00a8f120]
+Event: 8.480 Thread 0x02af5c00   35             java.lang.Long::hashCode (8 bytes)
+Event: 8.480 Thread 0x02af5c00 nmethod 35 0x00a8f188 code [0x00a8f280, 0x00a8f320]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 8.622 Thread 0x00879800 Exception <a 'java/lang/NullPointerException'> (0x02d74070) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\5298\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 8.623 Thread 0x00879800 Exception <a 'java/lang/NullPointerException'> (0x02d74930) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\5298\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 8.684 Thread 0x00879800 Exception <a 'java/lang/NullPointerException'> (0x02d751d0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\5298\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 8.746 Thread 0x00879800 Exception <a 'java/lang/NullPointerException'> (0x02d760e0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\5298\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 8.793 Thread 0x00879800 Exception <a 'java/lang/NullPointerException'> (0x02d769d0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\5298\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 8.855 Thread 0x00879800 Exception <a 'java/lang/NullPointerException'> (0x02d8d440) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\5298\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 8.902 Thread 0x00879800 Exception <a 'java/lang/NullPointerException'> (0x02d8dce0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\5298\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 8.965 Thread 0x00879800 Exception <a 'java/lang/NullPointerException'> (0x02d8e580) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\5298\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 9.027 Thread 0x00879800 Exception <a 'java/lang/NullPointerException'> (0x02d8ee20) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\5298\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 9.074 Thread 0x00879800 Exception <a 'java/lang/NullPointerException'> (0x02d8f6c0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\5298\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+
+Events (10 events):
+Event: 0.254 loading class bwapi/Player
+Event: 0.254 loading class bwapi/Player done
+Event: 4.182 Executing VM operation: EnableBiasedLocking
+Event: 4.182 Executing VM operation: EnableBiasedLocking done
+Event: 8.141 loading class bwta/BWTA
+Event: 8.141 loading class bwta/BWTA done
+Event: 8.478 loading class bwta/BaseLocation
+Event: 8.478 loading class bwta/BaseLocation done
+Event: 8.480 loading class bwapi/TilePosition
+Event: 8.480 loading class bwapi/TilePosition done
+
+
+Dynamic libraries:
+0x00400000 - 0x00433000 	C:\Program Files\Java\jre1.8.0_66\bin\javaw.exe
+0x7c920000 - 0x7c9b6000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c91e000 	C:\WINDOWS\system32\kernel32.dll
+0x77da0000 - 0x77e49000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e50000 - 0x77ee3000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77fc0000 - 0x77fd1000 	C:\WINDOWS\system32\Secur32.dll
+0x77d10000 - 0x77da0000 	C:\WINDOWS\system32\USER32.dll
+0x77ef0000 - 0x77f39000 	C:\WINDOWS\system32\GDI32.dll
+0x77180000 - 0x77283000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.6028_x-ww_61e65202\COMCTL32.dll
+0x77be0000 - 0x77c38000 	C:\WINDOWS\system32\msvcrt.dll
+0x77f40000 - 0x77fb6000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x76300000 - 0x7631d000 	C:\WINDOWS\system32\IMM32.DLL
+0x62c20000 - 0x62c29000 	C:\WINDOWS\system32\LPK.DLL
+0x73fa0000 - 0x7400b000 	C:\WINDOWS\system32\USP10.dll
+0x78aa0000 - 0x78b5f000 	C:\Program Files\Java\jre1.8.0_66\bin\msvcr100.dll
+0x6d160000 - 0x6d525000 	C:\Program Files\Java\jre1.8.0_66\bin\client\jvm.dll
+0x71a40000 - 0x71a4b000 	C:\WINDOWS\system32\WSOCK32.dll
+0x71a20000 - 0x71a37000 	C:\WINDOWS\system32\WS2_32.dll
+0x71a10000 - 0x71a18000 	C:\WINDOWS\system32\WS2HELP.dll
+0x76b10000 - 0x76b3a000 	C:\WINDOWS\system32\WINMM.dll
+0x77bd0000 - 0x77bd8000 	C:\WINDOWS\system32\VERSION.dll
+0x76bc0000 - 0x76bcb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x70090000 - 0x7009c000 	C:\Program Files\Java\jre1.8.0_66\bin\verify.dll
+0x6da10000 - 0x6da31000 	C:\Program Files\Java\jre1.8.0_66\bin\java.dll
+0x70120000 - 0x70133000 	C:\Program Files\Java\jre1.8.0_66\bin\zip.dll
+0x7d590000 - 0x7dd84000 	C:\WINDOWS\system32\SHELL32.dll
+0x759d0000 - 0x75a7f000 	C:\WINDOWS\system32\USERENV.dll
+0x14070000 - 0x142d9000 	D:\workspace\ExampleBot\bwapi_bridge2_4.dll
+0x142e0000 - 0x14351000 	C:\Program Files\Java\jre1.8.0_66\bin\MSVCP120.dll
+0x14360000 - 0x1444e000 	C:\Program Files\Java\jre1.8.0_66\bin\MSVCR120.dll
+0x6acc0000 - 0x6ad27000 	D:\workspace\ExampleBot\libgmp-10.dll
+0x6f540000 - 0x6f59e000 	D:\workspace\ExampleBot\libmpfr-4.dll
+0x68d60000 - 0x68e01000 	C:\WINDOWS\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK 
+java_command: TestBot1
+java_class_path (initial): D:\workspace\ExampleBot\bin;D:\workspace\ExampleBot\lib\bwmirror_v2_4.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files/Java/jre1.8.0_66/bin/client;C:/Program Files/Java/jre1.8.0_66/bin;C:/Program Files/Java/jre1.8.0_66/lib/i386;C:\Documents and Settings\All Users\Application Data\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;D:\eclipse\java-mars\eclipse;
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 5.1 Build 2600 (5.1.2600.6532)
+
+CPU:total 4 (2 cores per cpu, 1 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, aes, clmul, erms, lzcnt, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 1048040k(298824k free), swap 2514108k(1766124k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.66-b18) for windows-x86 JRE (1.8.0_66-b18), built on Nov  9 2015 10:58:29 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sat Dec 12 18:20:53 2015
+elapsed time: 9 seconds (0d 0h 0m 9s)
+
